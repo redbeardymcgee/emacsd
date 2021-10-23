@@ -1,7 +1,16 @@
-* Configure `lispy`
+* Identity
+** User and Email
+#+begin_src elisp
+(setq user-full-name "redbeardy mcgee"
+      user-mail-address "redbeardymcgee@gmail.com")
+#+end_src
+
+* Lisp
+** Configure `lispy`
 Several configuration options are wrapped into presets known as key themes,
-provided by `lispyville`. See [Key Themes](https://github.com/noctuid/lispyville#key-themes)
-for detailed descriptions.
+provided by `lispyville`. See [Key
+Themes](https://github.com/noctuid/lispyville#key-themes) for detailed
+descriptions.
 
 #+BEGIN_SRC elisp
 (lispyville-set-key-theme '(operators
