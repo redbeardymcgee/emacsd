@@ -1,0 +1,20 @@
+* Configure `lispy`
+Several configuration options are wrapped into presets known as key themes,
+provided by `lispyville`. See [Key Themes](https://github.com/noctuid/lispyville#key-themes)
+for detailed descriptions.
+
+#+BEGIN_SRC elisp
+(lispyville-set-key-theme '(operators
+                            c-w
+                            c-u
+                            prettify
+                            (atom-movement t)
+                            additional-movement
+                            commentary
+                            slurp/barf-lispy
+                            wrap
+                            additional
+                            additional-insert
+                            arrows
+                            escape))
+#+END_SRC
