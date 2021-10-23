@@ -7,8 +7,18 @@
 
 * Lisp
 ** Configure `lispy`
-Several configuration options are wrapped into presets known as key themes,
-provided by `lispyville`. See [[https://github.com/noctuid/lispyville#key-themes][Key Themes]] descriptions.
+I like to be a full-commit kind of person. If I'm going to get good lisp editing
+support, I don't want it only halfway. `lispy` offers a very interesting
+approach, but it very much expects the user to be in a bog-standard emacs
+editing state or mode, **not** the vim-inspired modes provided by `evil-mode`.
+
+`lispyville` tries to solve this problem by providing keybinds across various modes.
+Some presets are modeless and are offered as a sort of all-or-nothing remapping approach.
+Other presets have default modes in which they are active, but can be configured to
+activate in additional modes by wrapping it in a list followed by the corresponding `evil-mode`
+symbols.
+
+See [[https://github.com/noctuid/lispyville#key-themes][Key Themes]] for descriptions.
 
 #+BEGIN_SRC elisp
 (lispyville-set-key-theme '(operators
