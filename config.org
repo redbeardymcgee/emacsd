@@ -1,3 +1,8 @@
+#+title:     rbm literate emacs config
+#+author:    redbeardy mcgee
+#+email:     redbeardymcgee@gmail.com
+
+
 * Identity
 ** User and Email
 #+begin_src elisp
@@ -8,6 +13,8 @@
 * Languages
 ** Lisp
 *** ~lispy~
+This is currently disabled while testing the ~parinfer~ module.
+
 I like to be a full-commit kind of person. If I'm going to get good lisp editing
 support, I don't want it only halfway. ~lispy~ offers a very interesting
 approach, but it very much expects the user to be in a bog-standard emacs
@@ -21,18 +28,33 @@ followed by the corresponding ~evil-mode~ symbols.
 
 See [[https://github.com/noctuid/lispyville#key-themes][Key Themes]] for descriptions.
 
-#+BEGIN_SRC elisp
-(lispyville-set-key-theme '(operators
-                            c-w
-                            c-u
-                            prettify
-                            (atom-movement t)
-                            additional-movement
-                            commentary
-                            slurp/barf-lispy
-                            wrap
-                            additional
-                            additional-insert
-                            arrows
-                            escape))
+#+BEGIN_SRC elisp :tangle no
+(after! lispyville
+  (lispyville-set-key-theme '(operators
+                              c-w
+                              c-u
+                              prettify
+                              (atom-movement t)
+                              additional-movement
+                              commentary
+                              slurp/barf-lispy
+                              wrap
+                              additional
+                              additional-insert
+                              ;arrows
+                              escape
+                              )))
 #+END_SRC
+
+I don't understand why ~arrows~ doesn't work yet. It may overlap with
+~slurp/barf-lispy~.
+*** ~parinfer~
+~parinfer~ understand lisp-family code indentation conventions and infers where
+to place closing parens based on the indent level.
+
+I don't want to confirm that ~parinfer~ should be allowed to edit my buffers, as
+I'm expecting it by default
+
+#+begin_src elisp
+(after! parinfer (setq parinfer-rust-check-before-enable nil))
+#+end_src
